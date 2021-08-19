@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite">
+    <test name="Login test">
+        <groups>
+            <run>
+                <include name="Authorization tests"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="ua.hillel.tests.AuthorizationTests"></class>
+        </classes>
+    </test>
+    <test name="Sign up test">
+        <parameter name="name" value="Ted"></parameter>
+        <parameter name="password" value="12"></parameter>
+        <parameter name="country" value="Belgium"></parameter>
+        <parameter name="role" value="student"></parameter>
+    </test>
+</suite>
