@@ -5,10 +5,12 @@
         <groups>
             <run>
                 <include name="Authorization tests"></include>
+                <include name="UI tests"></include>
             </run>
         </groups>
         <classes>
             <class name="ua.hillel.tests.AuthorizationTests"></class>
+            <class name="ua.hillel.tests.UiTests"></class>
         </classes>
     </test>
     <test name="Sign up test">
