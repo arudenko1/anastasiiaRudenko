@@ -2,6 +2,8 @@ package ua.hillel.tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -61,19 +63,12 @@ public class UiTests extends BaseTest {
     После клика нужно вставить задержку, иначе код может падать.
     Проще всего сделать через Thread.sleep(1000) (также нужно обработать исключение) */
 
-    public void sleep(int millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
     @Test(priority = 3, description = "Find geolocation test")
     public void findGeolocationTest() {
         driver.get("https://the-internet.herokuapp.com/geolocation");
         driver.findElement(By.xpath("//button[text()='Where am I?']")).click();
-        sleep(4000);
+        WebDriverWait wait = new WebDriverWait(driver,5);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("lat-value")));
         String latitude = driver.findElement(By.id("lat-value")).getText();
         String longitude = driver.findElement(By.id("long-value")).getText();
         System.out.println("Latitude is " + latitude + " & Longitude is " + longitude);
