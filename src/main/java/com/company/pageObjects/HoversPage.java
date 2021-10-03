@@ -1,5 +1,6 @@
 package com.company.pageObjects;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.WebElement;
@@ -24,6 +25,7 @@ public class HoversPage extends BasePage {
     @FindAll(@FindBy(xpath = "//div[@class='figcaption']/h5"))
     List<WebElement> userName;
 
+    @Step("Hover over Element and get name")
     public List<String> hoverOverElementAndGetName() {
         int avatarCount = avatar.size();
         List<String> res = new ArrayList<String>();

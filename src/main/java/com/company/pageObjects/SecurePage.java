@@ -1,5 +1,6 @@
 package com.company.pageObjects;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,10 +20,12 @@ public class SecurePage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Get message")
     public String getMessage() {
         return message.getText();
     }
 
+    @Step("Logout")
     public LoginPage logout() {
         logoutButton.click();
         return new LoginPage(driver);

@@ -1,5 +1,6 @@
 package com.company.pageObjects;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,21 +31,25 @@ public class ChallengingDomPage extends BasePage {
 
     private List<WebElement> valueInColumn4;
 
+    @Step("Click button")
     public ChallengingDomPage clickButton() {
         button.click();
         return new ChallengingDomPage(driver);
     }
 
+    @Step("Click button Alert")
     public ChallengingDomPage clickButtonAlert() {
         buttonAlert.click();
         return new ChallengingDomPage(driver);
     }
 
+    @Step("Click button Success")
     public ChallengingDomPage clickButtonSuccess() {
         buttonSuccess.click();
         return new ChallengingDomPage(driver);
     }
 
+    @Step("Get Text")
     public List<String> getText() {
         List<String> result = new ArrayList<String>();
         int cells_count = valueInColumn4.size();

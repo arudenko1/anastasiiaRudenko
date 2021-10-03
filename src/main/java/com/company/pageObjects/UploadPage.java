@@ -1,5 +1,6 @@
 package com.company.pageObjects;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,13 +24,14 @@ public class UploadPage extends BasePage {
     @FindBy(xpath = "//h3[text()='File Uploaded!']")
     private WebElement message;
 
-
+    @Step("Upload File")
     public UploadPage uploadFile(String path) {
         fileInput.sendKeys(new File(path).getAbsolutePath());
         uploadButton.click();
         return this;
     }
 
+    @Step("Get Message")
     public String getMessage() {
         return message.getText();
     }
