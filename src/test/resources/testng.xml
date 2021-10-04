@@ -1,22 +1,45 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Suite">
-    <test name="Login test">
-        <groups>
-            <run>
-                <include name="Authorization tests"></include>
-                <include name="UI tests"></include>
-            </run>
-        </groups>
+<suite name="Practice Suite">
+    <test name="Challenging Dom Test">
         <classes>
-            <class name="ua.hillel.tests.AuthorizationTests"></class>
+            <class name="ua.hillel.tests.ChallengingDomTest"></class>
+        </classes>
+    </test>
+    <test name="Download and Upload file Test">
+        <classes>
+            <class name="ua.hillel.tests.DownloadAndUploadFileTest"></class>
+        </classes>
+    </test>
+    <test name="GeolocationTest">
+        <classes>
+            <class name="ua.hillel.tests.GeolocationTest"></class>
+        </classes>
+    </test>
+    <test name="Hovers test">
+        <classes>
+            <class name="ua.hillel.tests.HoversTest"></class>
+        </classes>
+    </test>
+    <test name="Login test">
+        <classes>
+            <class name="ua.hillel.tests.LoginTest"></class>
+        </classes>
+    </test>
+    <test name="UI test">
+        <classes>
             <class name="ua.hillel.tests.UiTests"></class>
         </classes>
     </test>
-    <test name="Sign up test">
-        <parameter name="name" value="Ted"></parameter>
-        <parameter name="password" value="12"></parameter>
-        <parameter name="country" value="Belgium"></parameter>
-        <parameter name="role" value="student"></parameter>
+    <test name="Advanced tests">
+        <classes>
+            <class name="ua.hillel.tests.AdvancedTests"></class>
+        </classes>
+    </test>
+    <test name="Selenide tests">
+        <classes>
+            <class name="ua.hillel.tests.selenide.DownloadUploadWithSelenideTest"></class>
+            <class name="ua.hillel.tests.selenide.DynamicControlTest"></class>
+        </classes>
     </test>
 </suite>
