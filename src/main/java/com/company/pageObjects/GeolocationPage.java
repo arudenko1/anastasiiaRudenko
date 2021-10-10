@@ -1,5 +1,6 @@
 package com.company.pageObjects;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,6 +25,7 @@ public class GeolocationPage extends BasePage {
     @FindBy(id = "long-value")
     private WebElement textLongitude;
 
+    @Step("Click Where Am I Button")
     public GeolocationPage clickWhereAmIButton() {
         buttonWhereAmI.click();
         WebDriverWait wait = new WebDriverWait(driver, 5);
@@ -31,10 +33,12 @@ public class GeolocationPage extends BasePage {
         return new GeolocationPage(driver);
     }
 
+    @Step("Get Latitude")
     public String getLatitude() {
         return textLatitude.getText();
     }
 
+    @Step("Get Longitude")
     public String getLongitude() {
         return textLongitude.getText();
     }

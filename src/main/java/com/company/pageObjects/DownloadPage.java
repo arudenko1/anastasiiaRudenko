@@ -1,5 +1,6 @@
 package com.company.pageObjects;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,6 +16,7 @@ public class DownloadPage extends BasePage {
     @FindBy(xpath = "//a[text()='some-file.txt']")
     private WebElement downloadTxtLink;
 
+    @Step("Click Download txt file link")
     public DownloadPage clickDownloadTxtFileLink() {
         downloadTxtLink.click();
         return new DownloadPage(driver);
